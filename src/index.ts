@@ -2,11 +2,11 @@ import * as J from 'doge-json';
 import * as pacote from 'pacote';
 import path from 'path';
 
-export async function all(pwd: string = '.') {
+export async function all(pwd: string = '.', ...packages: string[]) {
 	pwd = path.resolve(pwd);
 	const pjson = await J.read(path.resolve(pwd, 'package.json'));
-	const dependencies = Object.keys(pjson.dependencies || {});
-	const to_install = new Set<string>(dependencies);
+	const dependencies = Object.keys(pjson?.dependencies || {});
+	const to_install = new Set<string>([...dependencies, ...packages]);
 	const manifests = new Map<string, pacote.ManifestResult>();
 	while (to_install.size > manifests.size) {
 		await Promise.all(

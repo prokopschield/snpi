@@ -1,7 +1,7 @@
 {
 	"name": "snpi",
 	"description": "Simple node package installer",
-	"version": "0.1.0-1",
+	"version": "0.1.0-2",
 	"main": "lib/index.js",
 	"bin": {
 		"snpi": "lib/cli.js"
@@ -20,5 +20,17 @@
 		"@types/pacote": "^11.1.1"
 	},
 	"keywords": [],
-	"license": "GPL-3.0-or-later"
+	"license": "GPL-3.0-or-later",
+	"types": "./lib/index.d.ts",
+	"directories": {
+		"lib": "lib"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/prokopschield/snpi.git"
+	},
+	"bugs": {
+		"url": "https://github.com/prokopschield/snpi/issues"
+	},
+	"homepage": "https://github.com/prokopschield/snpi#readme"
 }

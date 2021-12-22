@@ -2,4 +2,4 @@
 
 import { all } from '.';
 
-all();
+all('.', ...process.argv.slice(2));
